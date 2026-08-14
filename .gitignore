@@ -1,0 +1,33 @@
+# Python / uv
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+dist/
+build/
+
+# ML artifacts
+ml/model.pkl
+ml/data/*.csv
+.ipynb_checkpoints/
+
+# Node / Vite
+node_modules/
+client/dist/
+*.local
+
+# Env
+.env
+.env.*
+!.env.example
+
+# IDE
+.idea/
+.vscode/
+*.suo
+
+# OS
+Thumbs.db
+.DS_Store
