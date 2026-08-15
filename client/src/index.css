@@ -67,13 +67,29 @@ select {
   border-radius: 8px;
   background: #fff;
   color: #0f172a;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.15s ease;
+}
+
+input:hover,
+select:hover {
+  border-color: #94a3b8;
 }
 
 input:focus,
 select:focus {
-  outline: 2px solid #2563eb;
-  outline-offset: 1px;
+  outline: none;
   border-color: transparent;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.35);
+}
+
+.hint {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #94a3b8;
+  line-height: 1.4;
 }
 
 button {
@@ -95,6 +111,59 @@ button:hover {
 button:disabled {
   opacity: 0.6;
   cursor: wait;
+}
+
+.loading {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.spinner {
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.bar {
+  margin-top: 0.75rem;
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(6, 95, 70, 0.15);
+  overflow: hidden;
+}
+
+.result.error .bar {
+  background: rgba(153, 27, 27, 0.12);
+}
+
+.bar-fill {
+  height: 100%;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #10b981, #059669);
+}
+
+.result.error .bar-fill {
+  background: linear-gradient(90deg, #ef4444, #b91c1c);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 .result {

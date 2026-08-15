@@ -10,6 +10,7 @@ class PassengerIn(BaseModel):
     sibsp: int = Field(default=0, ge=0)
     parch: int = Field(default=0, ge=0)
     fare: float = Field(default=0.0, ge=0)
+    embarked: Literal["C", "S", "Q"] | None = Field(default=None)
     name: str = Field(default="Mr. Unknown", max_length=120)
 
 

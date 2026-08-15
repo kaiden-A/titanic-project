@@ -1,7 +1,6 @@
-from fastapi import APIRouter, HTTPException
-
 from app.schemas.passenger import HealthOut, PassengerIn, PredictionOut
 from app.services.ml_service import model_is_available, predict_survival
+from fastapi import APIRouter, HTTPException
 
 router = APIRouter(prefix="/api", tags=["predict"])
 

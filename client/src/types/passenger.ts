@@ -5,6 +5,7 @@ export interface Passenger {
   sibsp: number
   parch: number
   fare: number
+  embarked: 'C' | 'S' | 'Q' | null
   name: string
 }
 
