@@ -1,15 +1,13 @@
 # ml
 
-Plain ML folder — notebooks for experimentation, `train.py` for the pipeline.
+This is a template — the ML training files are intentionally **not** included here.
 
-```
-ml/
-├── notebooks/    # .ipynb EDA / experiments
-├── train.py      # full pipeline → ml/model.pkl
-├── data/         # train.csv (drop your Kaggle copy here; auto-downloads if missing)
-└── model.pkl     # trained sklearn pipeline (self-contained, gitignored)
-```
+The complete training setup lives on the **`solution`** branch:
 
-Train: `uv run python ml/train.py`
+- `ml/notebooks/main.ipynb` — EDA / experiments
+- `ml/train.py` — pipeline → `ml/model.pkl`
+- `ml/data/train.csv` — training data (gitignored)
 
-The server loads `ml/model.pkl` directly with `joblib.load` — no shared package needed.
+You will need to create them yourself. The API (`server/`) only needs `ml/model.pkl`,
+so you can train the model on the `solution` branch and copy the artifact over, or
+follow the same pipeline from scratch.
